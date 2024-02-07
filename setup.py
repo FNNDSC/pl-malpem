@@ -19,18 +19,18 @@ def get_version(rel_path: str) -> str:
 
 
 setup(
-    name='chris-plugin-template',
-    version=get_version('app.py'),
-    description='A ChRIS DS plugin template',
-    author='FNNDSC',
+    name='malpem_cpl',
+    version=get_version('malpem_cpl.py'),
+    description='Brain MRI bias correction, extraction, and segmentation pipeline',
+    author='Christian Ledig, BioMedIA, & FNNDSC',
     author_email='dev@babyMRI.org',
-    url='https://github.com/FNNDSC/python-chrisapp-template',
-    py_modules=['app'],
-    install_requires=['chris_plugin'],
+    url='https://github.com/FNNDSC/pl-malpem',
+    py_modules=['malpem_cpl'],
+    install_requires=['chris_plugin==0.4.0'],
     license='MIT',
     entry_points={
         'console_scripts': [
-            'commandname = app:main'
+            'malpem_chris_wrapper = malpem_cpl:main'
         ]
     },
     classifiers=[
